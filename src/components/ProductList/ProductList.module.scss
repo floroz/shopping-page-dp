@@ -1,0 +1,9 @@
+@import "src/styles/variables";
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($productCardWidth, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: $gutter;
+  padding: 4rem;
+}

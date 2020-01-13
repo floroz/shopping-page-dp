@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 /* Box sizing rules */
 *,
 *::before,
@@ -17,6 +19,8 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 ul[class],
 ol[class],
@@ -75,4 +79,16 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Custom  */
+:root,
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  font-family: $font;
 }

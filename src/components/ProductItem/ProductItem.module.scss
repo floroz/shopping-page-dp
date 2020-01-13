@@ -1,0 +1,76 @@
+@import "src/styles/variables";
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: $productCardWidth;
+  overflow: hidden;
+  position: relative;
+  border-radius: $borderRadius;
+}
+
+.image {
+  width: $productCardWidth;
+  height: auto;
+  position: relative;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.brand {
+  font-size: 1.4rem;
+}
+
+.size {
+  font-size: 1.4rem;
+}
+
+.price {
+  font-size: 1.4rem;
+}
+
+.like {
+  position: absolute;
+  z-index: $likeIndex;
+  top: 2%;
+  right: 2%;
+  width: 4.4rem;
+  height: 4.4rem;
+  background-color: $lightGrey;
+  border: 1px solid $blackOlive;
+  border-radius: $borderRadius;
+  cursor: pointer;
+
+  &.isLiked {
+    background-color: $red;
+
+    svg {
+      fill: $white;
+    }
+  }
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: $likeIndex - 1;
+}
+
+.sold {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: $white;
+  z-index: $likeIndex + 10;
+}
