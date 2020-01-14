@@ -1,0 +1,14 @@
+@mixin like-button() {
+  width: 4.4rem;
+  height: 4.4rem;
+  background-color: $lightGrey;
+  border: 1px solid $blackOlive;
+  border-radius: $borderRadius;
+  cursor: pointer;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

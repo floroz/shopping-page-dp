@@ -26,7 +26,11 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Header products={products} listOfIds={likedProductsIds} />
+      <Header
+        products={products}
+        listOfIds={likedProductsIds}
+        onLikedProduct={onLikeProduct}
+      />
       <main>
         <ProductList
           products={products}

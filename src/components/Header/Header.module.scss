@@ -1,6 +1,75 @@
 @import "src/styles/variables";
+@import "src/styles/mixins";
+
+$like-button-margin: 10px;
 
 .header {
   height: $headerHeight;
   background-color: $red;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  grid-column: 2/3;
+  @include flex-center();
+  @include like-button();
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: $like-button-margin;
+  width: 7rem;
+  padding: 1rem;
+
+  svg {
+    width: 3rem;
+  }
+
+  .likesNumber {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $red;
+  }
+
+  &.isOpen {
+    background-color: $white;
+    svg {
+      fill: $red;
+    }
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 7.5rem;
+  right: $like-button-margin;
+  background-color: $lightGrey;
+  padding: 1.5rem;
+  border: 1px solid $red;
+  border-radius: $borderRadius;
+  width: 15rem;
+  min-height: 10rem;
+
+  .likesBox {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    button {
+      font-size: 1.4rem;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      background-color: transparent;
+      border: none;
+    }
+  }
 }

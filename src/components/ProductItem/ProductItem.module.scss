@@ -1,4 +1,5 @@
 @import "src/styles/variables";
+@import "src/styles/mixins";
 
 .card {
   display: flex;
@@ -35,16 +36,11 @@
 }
 
 .like {
+  @include like-button();
   position: absolute;
   z-index: $likeIndex;
   top: 2%;
   right: 2%;
-  width: 4.4rem;
-  height: 4.4rem;
-  background-color: $lightGrey;
-  border: 1px solid $blackOlive;
-  border-radius: $borderRadius;
-  cursor: pointer;
 
   &.isLiked {
     background-color: $red;
