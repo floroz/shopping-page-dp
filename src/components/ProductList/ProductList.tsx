@@ -10,7 +10,12 @@ interface Props {
   isLiked: (productId: number) => boolean;
 }
 
-const ProductList: React.FC<Props> = ({ products, isLiked, onLikeProduct }) => {
+const ProductList: React.FC<Props> = ({
+  products,
+  isLiked,
+  onLikeProduct,
+  loading
+}) => {
   const [hideSold, setHideSold] = useState<boolean>(false);
 
   function onToggleHide(): void {
@@ -24,7 +29,11 @@ const ProductList: React.FC<Props> = ({ products, isLiked, onLikeProduct }) => {
   return (
     <section className={styles.section}>
       <div className={styles.titleBox}>
-        <h3>{products ? `${products.length} Results` : "No Products"}</h3>
+        {!loading ? (
+          <h3>{products ? `${products.length} Results` : "No Products"}</h3>
+        ) : (
+          <h3>Loading...</h3>
+        )}
         <button className={styles.hideButton} onClick={onToggleHide}>
           {hideSold ? "Hide Sold Item" : "Show Sold Item"}
         </button>
